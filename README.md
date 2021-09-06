@@ -12,10 +12,23 @@ npm install uland-isomorphic
 Use [uland][uland] or [uland-ssr][ssr] from a single import identifier depending on then environment you are running.
 
 ``` js
-import {render, html, svg} from 'uland-isomorphic';
-// const {render, html, svg} = require('uland');
+import {Component, render, html, useState} from 'uland-isomorphic';
 
-render(document.body, html`<h1>Hello 👋 µhtml</h1>`);
+const Counter = Component((initialState) => {
+  const [count, setCount] = useState(initialState);
+  return html`
+  <button onclick=${() => setCount(count + 1)}>
+    Count: ${count}
+  </button>`;
+});
+
+// basic example, show two independent counters
+render(document.body, () => html`
+  <div>
+    A bounce of counters.<hr>
+    ${Counter(0)} ${Counter(1)}
+  </div>
+`);
 ```
 
 ## How
