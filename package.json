@@ -1,0 +1,59 @@
+{
+  "name": "uland-isomorphic",
+  "description": "Isomorphic exports of uland",
+  "version": "0.0.0",
+  "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
+  "bugs": {
+    "url": "https://github.com/bcomnes/uland-isomorphic/issues"
+  },
+  "dependencies": {
+    "uland": "^2.7.6",
+    "uland-ssr": "^0.7.4"
+  },
+  "devDependencies": {
+    "auto-changelog": "^2.2.0",
+    "gh-release": "^6.0.0",
+    "npm-run-all2": "^5.0.0",
+    "standard": "^16.0.2"
+  },
+  "homepage": "https://github.com/bcomnes/uland-isomorphic",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./node.cjs",
+  "browser": {
+    ".": "./browser.cjs",
+    "./async.js": "./async.browser.cjs"
+  },
+  "module": "./browser.mjs",
+  "exports": {
+    ".": {
+      "browser": "./browser.mjs",
+      "import": "./node.mjs",
+      "require": "./node.cjs"
+    },
+    "./async": {
+      "browser": "./async.browser.mjs",
+      "import": "./async.mjs",
+      "require": "./async.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcomnes/uland-isomorphic.git"
+  },
+  "scripts": {
+    "prepublishOnly": "git push --follow-tags && gh-release -y",
+    "test": "run-s test:*",
+    "test:standard": "standard",
+    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/bcomnes"
+  }
+}
