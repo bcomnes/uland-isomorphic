@@ -7,7 +7,7 @@
     "url": "https://github.com/bcomnes/uland-isomorphic/issues"
   },
   "dependencies": {
-    "uland": "^0.11.0",
+    "uland": "^0.12.0",
     "uland-ssr": "^0.5.0"
   },
   "devDependencies": {
