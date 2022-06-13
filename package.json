@@ -13,7 +13,7 @@
   "devDependencies": {
     "auto-changelog": "^2.2.0",
     "gh-release": "^6.0.0",
-    "npm-run-all2": "^5.0.0",
+    "npm-run-all2": "^6.0.0",
     "standard": "^17.0.0"
   },
   "homepage": "https://github.com/bcomnes/uland-isomorphic",
